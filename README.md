@@ -192,6 +192,42 @@ Example:
 [ACTION] RESUME FORWARD
 ```
 
+## Simulation Evidence
+
+The following screenshots document the tested circuit and the major operating states of the robot in Tinkercad simulation.
+
+### Complete Circuit
+
+![Complete Tinkercad circuit](images/final-circuit.png)
+
+### Clear Path and Forward Movement
+
+![Clear path and forward movement](images/clear-forward.png)
+
+### Obstacle Detection and Reverse Action
+
+![Obstacle detected and robot reversing](images/obstacle-detected.png)
+
+### Left Path Selected
+
+![Left path selected after scanning](images/path-left.png)
+
+### Right Path Selected
+
+![Right path selected after scanning](images/path-right.png)
+
+### Both Paths Blocked
+
+![Both paths blocked and reverse-rescan recovery](images/both-blocked.png)
+
+### Invalid Sensor Reading Safety Response
+
+![Invalid sensor reading and safe stop](images/sensor-error.png)
+
+### LCD Output Close-up
+
+![LCD output close-up](images/lcd%20random%20closeup%20output.png)
+
 ## Testing Summary
 
 The simulation was tested against the major operating conditions required by the project.
@@ -208,6 +244,8 @@ The simulation was tested against the major operating conditions required by the
 | LCD state reporting | Display current robot state | Passed |
 | Serial diagnostics | Report real-time status | Passed |
 
+For the detailed test procedure and observations, see [TEST_RESULTS.md](TEST_RESULTS.md).
+
 ## Important Simulation Note
 
 Tinkercad is used as the development and validation environment. The simulation demonstrates the electrical connections, sensor measurements, control decisions, motor commands, servo positioning commands, LCD output, and Serial Monitor behaviour.
@@ -218,7 +256,9 @@ The virtual environment does not physically model a complete moving robot chassi
 
 The complete Arduino sketch is available in:
 
-`final.ino`
+[`final.ino`](final.ino)
+
+The circuit connections and pin mapping are documented in [CIRCUIT_AND_PINOUT.md](CIRCUIT_AND_PINOUT.md).
 
 ## Repository Structure
 
@@ -226,7 +266,17 @@ The complete Arduino sketch is available in:
 autonomous-obstacle-avoidance-robot/
 |-- README.md
 |-- final.ino
-`-- TEST_RESULTS.md
+|-- CIRCUIT_AND_PINOUT.md
+|-- TEST_RESULTS.md
+`-- images/
+    |-- final-circuit.png
+    |-- clear-forward.png
+    |-- obstacle-detected.png
+    |-- path-left.png
+    |-- path-right.png
+    |-- both-blocked.png
+    |-- sensor-error.png
+    `-- lcd random closeup output.png
 ```
 
 ## Limitations
