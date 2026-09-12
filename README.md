@@ -198,7 +198,7 @@ The following screenshots document the tested circuit and the major operating st
 
 ### Complete Circuit
 
-![Complete Tinkercad circuit](images/final-circuit.png)
+The complete Tinkercad circuit is shown in the project report and demo video. A dedicated circuit screenshot is not included in the repository, so this README does not reference a missing image.
 
 ### Clear Path and Forward Movement
 
@@ -250,60 +250,10 @@ For the detailed test procedure and observations, see [TEST_RESULTS.md](TEST_RES
 
 Tinkercad is used as the development and validation environment. The simulation demonstrates the electrical connections, sensor measurements, control decisions, motor commands, servo positioning commands, LCD output, and Serial Monitor behaviour.
 
-The virtual environment does not physically model a complete moving robot chassis with a servo-mounted sensor in the same way as real hardware. Therefore, repeated obstacle detections can occur when the virtual target remains in front of the simulated sensor after a turn. This is a limitation of the simulation environment rather than a change to the programmed decision logic.
+The virtual environment does not physically model a complete moving robot chassis with a servo-mounted sensor in the same way as real hardware. Therefore, repeated obstacle detections can occur when a virtual target remains in front of the simulated sensor after a turn. This is a limitation of the simulation environment rather than a change to the programmed decision logic.
 
 ## Source Code
 
 The complete Arduino sketch is available in:
 
 [`final.ino`](final.ino)
-
-The circuit connections and pin mapping are documented in [CIRCUIT_AND_PINOUT.md](CIRCUIT_AND_PINOUT.md).
-
-## Repository Structure
-
-```text
-autonomous-obstacle-avoidance-robot/
-|-- README.md
-|-- final.ino
-|-- CIRCUIT_AND_PINOUT.md
-|-- TEST_RESULTS.md
-`-- images/
-    |-- final-circuit.png
-    |-- clear-forward.png
-    |-- obstacle-detected.png
-    |-- path-left.png
-    |-- path-right.png
-    |-- both-blocked.png
-    |-- sensor-error.png
-    `-- lcd random closeup output.png
-```
-
-## Limitations
-
-- The current implementation is validated in Tinkercad simulation rather than claimed as a completed physical robot build.
-- Turn angle and motor timing are simulation parameters and would require tuning on a real chassis.
-- The LCD has limited space, so detailed diagnostics remain on the Serial Monitor.
-- The current robot does not use wheel encoders, so motor RPM is not physically measured.
-
-## Future Enhancements
-
-Possible future improvements include:
-
-- Physical chassis implementation and motor-power integration.
-- Wheel encoders for actual RPM measurement and closed-loop speed control.
-- More robust distance filtering and threshold hysteresis.
-- Maze solving or path optimization.
-- Bluetooth or Wi-Fi control.
-- IoT/cloud monitoring.
-- Additional sensors for wider obstacle coverage.
-
-## Author
-
-**Aaditya Dolhare**
-
-GitHub: [@aadityadolhare](https://github.com/aadityadolhare)
-
-## Reference and Development Note
-
-The initial circuit architecture was studied from publicly available obstacle-avoidance examples in Tinkercad. The project was subsequently modified, tested, and developed into the configuration documented in this repository, including the servo-assisted scan logic, safer path-selection rules, LCD integration, and simulation validation.
